@@ -50,8 +50,6 @@
     function updateTitle() {
         let titleValue = "My Items (" + items.length + ")";
         document.getElementById('title').textContent = titleValue;
-        // TODO: (maybe done) set the title text to show the count, e.g., "My Items (N)"
-        // Use items.length for N
     }
 
     function render() {
@@ -68,15 +66,6 @@
             listEl.append(li);
         }
         updateTitle();
-        // TODO: maybe done
-        // TODO: clear the list (listEl.innerHTML = "")
-        // TODO: loop over items and create an <li> for each:
-        //   - li.textContent = item.name
-        //   - if item.done is true, add class "done"
-        //   - store item.id on the li using li.dataset.id = item.id
-        //   - (optional) set li.style.background = item.color
-        // TODO: append each li to listEl
-        // TODO: call updateTitle() at the end
     }
 
     // ===== Events =====
@@ -88,10 +77,6 @@
         items.push({ id: nextId++, name, color: randomColor(), done: false });
         nameInput.value = "";
         render();
-        // TODO: (maybe done)
-        // - push a new object into items: { id: nextId++, name, color: randomColor(), done: false }
-        // - clear the input
-        // - call render()
     });
 
     // 2) Delete last item on button click
@@ -110,10 +95,6 @@
         let indexValue = items.findIndex(isIdValue)
         items[indexValue].done = !items[indexValue].done;
         render();
-        // TODO:
-        // - find the closest <li> (e.target.closest("li"))
-        // - read its data-id, find the matching item in items
-        // - flip item.done (true/false), then call render()
     });
 
     // Initial paint
